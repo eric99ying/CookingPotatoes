@@ -16,3 +16,27 @@
 
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+// Tweak numbers here please!
+:root {
+  --sidebar_width: 15vw;
+  --sidebar_lr_padding: 3vw;
+  --sidebar_t_padding: 5vh;
+  --content_t_padding: 5vh;
+}
+
+#sidebar {
+    width: var(--sidebar_width);
+    height: 100vh;
+    position: fixed;   // Ensure sidebar stays fixed on scroll
+    top: 0;
+    left: 0;           // Ensure sidebar is at top left of screen
+    padding-top: var(--sidebar_t_padding);
+    padding-left: var(--sidebar_lr_padding);
+    padding-right: var(--sidebar_lr_padding);
+}
+
+#content {
+    margin-left: var(--sidebar_width);
+    padding-top: var(--content_t_padding);
+}
