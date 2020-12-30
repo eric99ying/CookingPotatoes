@@ -20,9 +20,7 @@
 // Tweak numbers here please!
 :root {
   --sidebar_width: 15vw;
-  --sidebar_lr_padding: 3vw;
-  --sidebar_t_padding: 5vh;
-  --content_t_padding: 5vh;
+  --sidebar_lr_padding: 2vw;
 }
 
 #sidebar {
@@ -31,12 +29,22 @@
     position: fixed;   // Ensure sidebar stays fixed on scroll
     top: 0;
     left: 0;           // Ensure sidebar is at top left of screen
-    padding-top: var(--sidebar_t_padding);
+    padding-top: 5vh;
     padding-left: var(--sidebar_lr_padding);
     padding-right: var(--sidebar_lr_padding);
 }
 
 #content {
     margin-left: var(--sidebar_width);
-    padding-top: var(--content_t_padding);
+    padding-top: 5vh;
+}
+
+#top_nav {
+    top: 0;
+    height: 15vh;
+}
+
+#bottom_nav {
+    padding-top: 10vh;
+    top: 15vh;
 }
