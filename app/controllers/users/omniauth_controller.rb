@@ -2,7 +2,7 @@ class Users::OmniauthController < ApplicationController
 
     # Controller method for google's omniauth callback
     def google_oauth2
-        @user = User.create_from_provided_data(request.env['omniauth.auth'])
+        @user = User.create_from_google_provided_data(request.env['omniauth.auth'])
         if @user.persisted?
             sign_in_and_redirect @user
             flash[:notice] = 'Successfully logged in using Google.'

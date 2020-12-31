@@ -5,7 +5,7 @@ class User < ApplicationRecord
     :omniauthable, omniauth_providers: [:google_oauth2]
 
     # Takes the data returned by the 3rd party site and creates an entry in Users table if needed
-    def self.create_from_provided_data(provided_data)
+    def self.create_from_google_provided_data(provided_data)
         user_obj = self.where(
             provider: provided_data.provider, 
             uid: provided_data.uid

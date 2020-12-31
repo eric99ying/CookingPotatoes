@@ -3,7 +3,29 @@
 
 <!-- Page contents -->
 <div class='container' id='content'>
-    <div>
-        <p>Here are some recipes.</p>
+    <div id='recipe-header'>
+        <h3>Listing all recipes.</h3>
+    </div>
+
+    <!-- Grid of all recipes -->
+    <div class='row' id='recipe-grid'>
+
+        <% @recipes.each do |recipe| %>
+            <div class = 'col-md-3'>
+
+                <div class="card recipe-box border-primary">
+                    <img class="card-img-top" src="">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= recipe.name %></h5>
+
+                        <p class="card-text"><%= recipe.creator_name %></p>
+                        <p class="card-text"><%= recipe.recipe_tag.name %></p>
+                    
+                    </div>
+
+                </div>
+            </div>
+        <% end %>
+
     </div>
 </div>

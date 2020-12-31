@@ -10,14 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_23_045614) do
+ActiveRecord::Schema.define(version: 2020_12_31_040913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "recipes", force: :cascade do |t|
+  create_table "recipe_ingredients", force: :cascade do |t|
+    t.bigint "recipe_id"
+    t.string "quantity_and_name", default: "", null: false
+    t.integer "priority", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id"
+  end
+
+  create_table "recipe_instructions", force: :cascade do |t|
+    t.bigint "recipe_id"
+    t.string "instruction", default: "", null: false
+    t.integer "step", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["recipe_id"], name: "index_recipe_instructions_on_recipe_id"
+  end
+
+  create_table "recipe_tags", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.string "creator_name", default: "", null: false
+    t.string "creator_email", default: "", null: false
+    t.string "description", default: "", null: false
+    t.string "photo_url", default: "", null: false
+    t.bigint "recipe_tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["recipe_tag_id"], name: "index_recipes_on_recipe_tag_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -33,8 +64,6 @@ ActiveRecord::Schema.define(version: 2020_12_23_045614) do
     t.string "provider", default: "", null: false
     t.string "uid", default: "", null: false
     t.string "name", default: "", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
     t.integer "sign_in_count", default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"

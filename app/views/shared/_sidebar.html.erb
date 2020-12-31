@@ -1,4 +1,5 @@
 <div class='vertical-nav bg-light' id='sidebar'>
+    <!-- Top of side bar consists of login and logout -->
     <ul class='navbar-nav' id='top_nav'>
         <li class='nav-item p-1'>
             <% if user_signed_in? %>
@@ -9,6 +10,7 @@
             <% end %>
         </li>
     </ul>
+    <!-- Bottom of sidebar contains other links -->
     <ul class='navbar-nav' id='bottom_nav'>
         <li class='nav-item p-1'>
             <a class='nav-link' href='/recipes'>View Recipes</a>
