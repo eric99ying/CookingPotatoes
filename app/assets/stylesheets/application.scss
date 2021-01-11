@@ -20,8 +20,12 @@
 // Tweak numbers here please!
 :root {
   --sidebar_width: 15vw;
-  --sidebar_lr_padding: 2vw;
+  --sidebar_lr_padding: 1vw;
 }
+
+html {
+    font-size: 2.1vmin;
+} 
 
 #sidebar {
     width: var(--sidebar_width);
@@ -32,6 +36,7 @@
     padding-top: 5vh;
     padding-left: var(--sidebar_lr_padding);
     padding-right: var(--sidebar_lr_padding);
+    z-index: 100;
 }
 
 #content {
@@ -39,19 +44,40 @@
     padding-top: 5vh;
 }
 
+#recipe-header {
+    position: relative;
+    left: 0.4rem;
+}
+
 #top_nav {
     top: 0;
-    height: 15vh;
+    height: 10vh;
 }
 
 #bottom_nav {
     padding-top: 10vh;
-    top: 15vh;
+    top: 10vh;
 }
 
 .recipe-box {
-    height: 35vh;
-    width: 30vh;
-    margin: 1rem;
-    padding: 1rem;
+    height: 10vh;
+    width: 25vh;
+    margin: 0.4rem;
+    z-index: 0;
+    position: relative;
+}
+
+.recipe-box-name {
+    position: relative;
+    top: -0.5rem;
+    font-size: 2vh;
+}
+
+.recipe-box-creator {
+    position: absolute;
+    bottom: 0.1rem;
+}
+
+.recipe-box-hover {
+    display: none;
 }

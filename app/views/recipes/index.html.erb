@@ -11,15 +11,14 @@
     <div class='row' id='recipe-grid'>
 
         <% @recipes.each do |recipe| %>
-            <div class = 'col-md-3'>
+            <div class = 'col-md-2'>
 
-                <div class="card recipe-box border-primary">
+                <div class="card recipe-box border-primary" id="recipe-box-<%= recipe.id %>">
                     <img class="card-img-top" src="">
                     <div class="card-body">
-                        <h5 class="card-title"><%= recipe.name %></h5>
+                        <h5 class="card-title recipe-box-name"><%= recipe.name %></h5>
 
-                        <p class="card-text"><%= recipe.creator_name %></p>
-                        <p class="card-text"><%= recipe.recipe_tag.name %></p>
+                        <p class="card-text recipe-box-creator"><%= recipe.creator_name %></p>
                     
                     </div>
 
@@ -28,4 +27,31 @@
         <% end %>
 
     </div>
+
+    <!-- Recipe information on hover -->
+    <% @recipes.each do |recipe| %>
+        
+        <div class="card recipe-box-hover" id="recipe-box-hover-<%= recipe.id %>">
+            <div class="card-body"> 
+                <div class="card-title"> 
+                    This is a popup!
+                </div>
+            </div>
+        </div>
+
+        <script> 
+            $('#recipe-box-<%= recipe.id %>').hover(
+              function() {
+                $('#recipe-box-hover-<%= recipe.id %>').toggle();
+              }, function() {
+                alert("Hover off!");
+                $('#recipe-box-hover-<%= recipe.id %>').toggle();
+              }
+            );
+        </script>
+
+    
+    <% end %>
+
+
 </div>

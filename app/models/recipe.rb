@@ -7,8 +7,8 @@ class Recipe < ApplicationRecord
     belongs_to :recipe_tag
 
     # Ensure name of recipe is appropriate
-    validates_length_of :name, minimum: 1, maximum: 50, 
-        too_long: "Name must be below 50 characters", too_short: "Name cannot be blank"
+    validates_length_of :name, minimum: 1, maximum: 40, 
+        too_long: "Name must be below 40 characters", too_short: "Name cannot be blank"
 
     # Class method to get all recipes in database
     def self.all_recipes
