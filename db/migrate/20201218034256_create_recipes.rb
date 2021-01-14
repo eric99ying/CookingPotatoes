@@ -6,7 +6,6 @@ class CreateRecipes < ActiveRecord::Migration[6.1]
             t.string :creator_email, null: false, default: ''
             t.string :description, null: false, default: ''
             t.string :photo_url, null: false, default: ''
-            t.belongs_to :recipe_tag
 
             t.timestamps
         end

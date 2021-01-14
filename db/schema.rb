@@ -45,10 +45,8 @@ ActiveRecord::Schema.define(version: 2020_12_31_040913) do
     t.string "creator_email", default: "", null: false
     t.string "description", default: "", null: false
     t.string "photo_url", default: "", null: false
-    t.bigint "recipe_tag_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["recipe_tag_id"], name: "index_recipes_on_recipe_tag_id"
   end
 
   create_table "sessions", force: :cascade do |t|

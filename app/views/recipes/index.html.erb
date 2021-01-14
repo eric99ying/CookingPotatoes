@@ -4,7 +4,7 @@
 <!-- Page contents -->
 <div class='container' id='content'>
     <div id='recipe-header'>
-        <h3>Listing all recipes.</h3>
+        <h1>Listing all recipes.</h1>
     </div>
 
     <!-- Grid of all recipes -->
@@ -39,12 +39,28 @@
             </div>
         </div>
 
+        <!-- Add a script that displays/hides the recipe popup -->
         <script> 
             $('#recipe-box-<%= recipe.id %>').hover(
-              function() {
+              function(event) {
+
+                // Dynamically set the locaiton of the popup to the box that was hovered over
+                $('#recipe-box-hover-<%= recipe.id %>').css(
+                    "left", event.clientX
+                );
+
+                $('#recipe-box-hover-<%= recipe.id %>').css(
+                    "top", event.clientY
+                );
+
+                // Display the popup
                 $('#recipe-box-hover-<%= recipe.id %>').toggle();
+
               }, function() {
+
+                // Hide the popup
                 $('#recipe-box-hover-<%= recipe.id %>').toggle();
+
               }
             );
         </script>

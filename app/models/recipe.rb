@@ -4,7 +4,7 @@ class Recipe < ApplicationRecord
     has_many :recipe_ingredients
 
     # One recipe may have several tags
-    belongs_to :recipe_tag
+    has_and_belongs_to_many :recipe_tags
 
     # Ensure name of recipe is appropriate
     validates_length_of :name, minimum: 1, maximum: 40, 

@@ -1,17 +1,20 @@
 <div class='vertical-nav bg-light' id='sidebar'>
     <!-- Top of side bar consists of login and logout -->
-    <ul class='navbar-nav' id='top_nav'>
+    <ul class='navbar-nav' id='top-nav'>
         <li class='nav-item p-1'>
             <% if user_signed_in? %>
                 <p>Welcome <span class='text-success'><%= current_user.name %></span>!</p>
-                <%= button_to 'Logout', destroy_user_session_path, :method=>:get, :class=>'btn btn-primary' %>
+                <%= button_to 'Logout', destroy_user_session_path, :method=>:get, :class=>'btn btn-primary sidebar-btn' %>
             <% else %>
-                <%= button_to 'Login with Google', user_google_oauth2_omniauth_authorize_path, :method=>:get, :class=>'btn btn-primary' %>
+                <%= button_to 'Login with Google', user_google_oauth2_omniauth_authorize_path, :method=>:get, :class=>'btn btn-primary sidebar-btn' %>
             <% end %>
         </li>
     </ul>
     <!-- Bottom of sidebar contains other links -->
-    <ul class='navbar-nav' id='bottom_nav'>
+    <ul class='navbar-nav' id='bottom-nav'>
+        <li class='nav-item p-1'>
+            <a class='nav-link' href='/'>Home</a>
+        </li>
         <li class='nav-item p-1'>
             <a class='nav-link' href='/recipes'>View Recipes</a>
         </li>

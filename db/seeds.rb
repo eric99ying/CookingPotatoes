@@ -10,11 +10,12 @@
 asian_tag = RecipeTag.create(name: 'Asian')
 american_tag = RecipeTag.create(name: 'American')
 dessert_tag = RecipeTag.create(name: 'Dessert')
+christmas_tag = RecipeTag.create(name: 'Christmas')
 
 # Seed recipes next
-tomato_egg = Recipe.create({name: 'Tomato and Eggs', creator_name: 'Eric Ying', recipe_tag: asian_tag})
-omelette = Recipe.create({name: 'Omelette', creator_name: 'Eric Ying', recipe_tag: american_tag})
-fried_rice = Recipe.create({name: 'Fried Rice', creator_name: 'Eric Ying', recipe_tag: asian_tag})
-grilled_cheese = Recipe.create({name: 'Grilled Cheese Sandwich', creator_name: 'Eric Ying', recipe_tag: american_tag})
-sorbet = Recipe.create({name: 'Sorbet', creator_name: 'Eric Ying', recipe_tag: dessert_tag})
-sorbet = Recipe.create({name: 'Cheese Cake', creator_name: 'Eric Ying', recipe_tag: dessert_tag})
+tomato_egg = Recipe.create({name: 'Tomato and Eggs', creator_name: 'Eric Ying', recipe_tags: [asian_tag]})
+omelette = Recipe.create({name: 'Omelette', creator_name: 'Eric Ying', recipe_tags: [american_tag]})
+fried_rice = Recipe.create({name: 'Fried Rice', creator_name: 'Eric Ying', recipe_tags: [asian_tag]})
+grilled_cheese = Recipe.create({name: 'Grilled Cheese Sandwich', creator_name: 'Eric Ying', recipe_tags: [american_tag]})
+sorbet = Recipe.create({name: 'Sorbet', creator_name: 'Eric Ying', recipe_tags: [dessert_tag]})
+eggnog = Recipe.create({name: 'NoggerLoggerFoggerHoggerSoggerEggNogger', creator_name: 'Eric Ying', recipe_tags: [dessert_tag, christmas_tag]})

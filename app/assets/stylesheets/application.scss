@@ -14,19 +14,22 @@
  *= require_self
  */
 
- // Custom bootstrap variables must be set or imported *before* bootstrap.
+// Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
-// Tweak numbers here please!
+// Tweak variables here please!
 :root {
   --sidebar_width: 15vw;
-  --sidebar_lr_padding: 1vw;
+  --sidebar_lr_padding: 1.2vw;
 }
 
+// Global font size
 html {
-    font-size: 2.1vmin;
+    font-size: calc(0.7vw + 0.65vh);
 } 
 
+
+// Left sidebar containing buttons and links
 #sidebar {
     width: var(--sidebar_width);
     height: 100vh;
@@ -39,30 +42,42 @@ html {
     z-index: 100;
 }
 
-#content {
-    margin-left: var(--sidebar_width);
-    padding-top: 5vh;
-}
-
-#recipe-header {
-    position: relative;
-    left: 0.4rem;
-}
-
-#top_nav {
+#top-nav {
     top: 0;
     height: 10vh;
 }
 
-#bottom_nav {
+#bottom-nav {
     padding-top: 10vh;
     top: 10vh;
 }
 
+.sidebar-btn {
+    width: 12vw;
+    height: 6vh;
+}
+
+// All content on the actual page should be here!
+#content {
+    padding-left: calc(var(--sidebar_width));
+    padding-top: 5vh;
+    width: calc(100vw - var(--sidebar_width));
+}
+
+#introduction {
+}
+
+#recipe-header {
+    position: relative;
+}
+
+#recipe-grid {
+    padding-top: 3vh;
+}
+
 .recipe-box {
     height: 10vh;
-    width: 25vh;
-    margin: 0.4rem;
+    width: 10vw;
     z-index: 0;
     position: relative;
 }
@@ -80,4 +95,7 @@ html {
 
 .recipe-box-hover {
     display: none;
+    position: absolute;
+    z-index: 50;
 }
+
