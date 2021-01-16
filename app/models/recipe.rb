@@ -14,4 +14,5 @@ class Recipe < ApplicationRecord
     def self.all_recipes
         return Recipe.all
     end
+
 end

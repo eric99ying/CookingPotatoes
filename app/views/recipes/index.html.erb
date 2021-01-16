@@ -33,9 +33,21 @@
         
         <div class="card recipe-box-hover" id="recipe-box-hover-<%= recipe.id %>">
             <div class="card-body"> 
-                <div class="card-title"> 
-                    This is a popup!
-                </div>
+                <h5 class="card-title recipe-box-hover-name"> 
+                    <%= recipe.name %>
+                </h5>
+                <h6 class="card-subtitle recipe-box-hover-creator"> 
+                    <%= recipe.creator_name %>
+                </h6>
+                <% recipe.recipe_tags.each do |rt| %>
+                    <h7 class="card-subtitle recipe-box-hover-tag rounded-pill"> 
+                        <%= rt.name %>
+                    </h7>
+                <% end %>
+                <p class="card-text recipe-box-hover-description">
+                    <%= recipe.description %>
+                </p>
+
             </div>
         </div>
 
@@ -45,9 +57,15 @@
               function(event) {
 
                 // Dynamically set the locaiton of the popup to the box that was hovered over
-                $('#recipe-box-hover-<%= recipe.id %>').css(
-                    "left", event.clientX
-                );
+                if (event.clientX <= document.documentElement.clientWidth / 2.0) {
+                    $('#recipe-box-hover-<%= recipe.id %>').css(
+                        "left", event.clientX
+                    );
+                } else {
+                    $('#recipe-box-hover-<%= recipe.id %>').css(
+                        "left", event.clientX - (document.documentElement.clientWidth / 100)*15
+                    );
+                }
 
                 $('#recipe-box-hover-<%= recipe.id %>').css(
                     "top", event.clientY

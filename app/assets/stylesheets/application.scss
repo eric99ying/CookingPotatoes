@@ -23,9 +23,10 @@
   --sidebar_lr_padding: 1.2vw;
 }
 
-// Global font size
+// Global font size and background color
 html {
     font-size: calc(0.7vw + 0.65vh);
+
 } 
 
 
@@ -59,14 +60,20 @@ html {
 
 // All content on the actual page should be here!
 #content {
-    padding-left: calc(var(--sidebar_width));
+    margin-left: calc(var(--sidebar_width));
     padding-top: 5vh;
+    padding-left: 3vw;
+    height: 100vh;
+    overflow: scroll;
     width: calc(100vw - var(--sidebar_width));
 }
 
+// Home page
 #introduction {
 }
 
+
+// Recipe list page
 #recipe-header {
     position: relative;
 }
@@ -79,23 +86,54 @@ html {
     height: 10vh;
     width: 10vw;
     z-index: 0;
+    margin-bottom: 2vh;
     position: relative;
 }
 
 .recipe-box-name {
     position: relative;
-    top: -0.5rem;
-    font-size: 2vh;
+    top: -0.6rem;
+    font-size: 1.8vh;
+
 }
 
 .recipe-box-creator {
     position: absolute;
-    bottom: 0.1rem;
+    bottom: 0.08rem;
+    font-size: 1.8vh;
+    color: #DE4A3F;
 }
 
 .recipe-box-hover {
     display: none;
     position: absolute;
     z-index: 50;
+    width: 15vw;
+    height:30vh;
+}
+
+.recipe-box-hover-name {
+    margin-bottom: 0.5rem;
+}
+
+.recipe-box-hover-creator {
+    margin-bottom: 0.4rem;
+}
+
+.recipe-box-hover-tag {
+    background-color: RoyalBlue;
+    padding: 0.2rem;
+    color: White;
+    width: 1.5rem;
+}
+
+.recipe-box-hover-description {
+    text-overflow: ellipsis;
+    margin-top: 0.4rem;
+    width: 10vw;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
 }
 
