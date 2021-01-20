@@ -1,0 +1,16 @@
+<!-- Vertical navbar -->
+<%= render "shared/sidebar" %>
+
+<!-- Page contents -->
+<div class='container' id='content'>
+    <div id='recipe-show-name'>
+        <h1><%= @recipe.name %></h1>
+    </div>
+    <div id='recipe-show-creator'>
+        <h3 class='text-muted'><%= @recipe.creator_name %></h1>
+    </div>
+    <div id='recipe-show-description'>
+        <p><%= @recipe.description %></p>
+    </div>
+
+</div>

@@ -13,7 +13,7 @@
         <% @recipes.each do |recipe| %>
             <div class = 'col-md-2'>
 
-                <div class="card recipe-box border-primary" id="recipe-box-<%= recipe.id %>">
+                <a class="card recipe-box border-primary stretched-link" href="<%= recipe_path(recipe.id) %>" id="recipe-box-<%= recipe.id %>">
                     <img class="card-img-top" src="">
                     <div class="card-body">
                         <h5 class="card-title recipe-box-name"><%= recipe.name %></h5>
@@ -22,7 +22,7 @@
                     
                     </div>
 
-                </div>
+                </a>
             </div>
         <% end %>
 
@@ -46,7 +46,8 @@
                 <% end %>
                 <p class="card-text recipe-box-hover-description">
                     <%= recipe.description %>
-                </p>
+                </p> 
+                <p class="recipe-box-hover-next text-primary">Click to view recipe</p>
 
             </div>
         </div>
