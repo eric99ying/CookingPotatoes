@@ -14,23 +14,23 @@
  *= require_self
  */
 
-// Custom bootstrap variables must be set or imported *before* bootstrap.
+/* Custom bootstrap variables must be set or imported *before* bootstrap. */
 @import "bootstrap";
 
-// Tweak variables here please!
+/* Tweak variables here please! */
 :root {
   --sidebar_width: 15vw;
   --sidebar_lr_padding: 1.2vw;
 }
 
-// Global font size and background color
+/* Global font size and background color */
 html {
     font-size: calc(0.8vw + 0.45vh);
 
 } 
 
 
-// Left sidebar containing buttons and links
+/* Left sidebar containing buttons and links */
 #sidebar {
     width: var(--sidebar_width);
     height: 100vh;
@@ -58,7 +58,7 @@ html {
     height: 6vh;
 }
 
-// All content on the actual page should be here!
+/* All content on the actual page should be here! */
 #content {
     margin-left: calc(var(--sidebar_width));
     padding-top: 5vh;
@@ -68,17 +68,12 @@ html {
     width: calc(100vw - var(--sidebar_width));
 }
 
-// Home page
+/* Home page */
 #introduction {
 }
 
 
-// Recipe list page
-.recipe-box-btn {
-    width: 0px;
-    height: 0px;
-}
-
+/* Recipe list page */
 #recipe-header {
     position: relative;
 }
@@ -87,7 +82,7 @@ html {
     padding-top: 3vh;
 }
 
-.recipe-box {
+.recipe-box { /* IMPORTANT: for recipe box */
     height: 10vh;
     width: 10vw;
     z-index: 0;
@@ -108,7 +103,7 @@ html {
     color: #DE4A3F;
 }
 
-.recipe-box-hover {
+.recipe-box-hover { /* IMPORTANT: for recipe box hovered popup */
     display: none;
     position: absolute;
     z-index: 50;
@@ -146,6 +141,26 @@ html {
     position: absolute;
 }
 
-// Recipe show page
+/* Recipe show page */
+#recipe-show-name {
 
+}
+
+#recipe-show-creator { 
+    margin-top: 1rem;
+}
+
+#recipe-show-description {
+    margin-top: 2rem;
+}
+
+#recipe-show-ingredients {
+    margin-top: 3rem;
+    width: 30vw;
+}
+
+
+#recipe-show-instructions {
+    margin-top: 4rem;
+}
 

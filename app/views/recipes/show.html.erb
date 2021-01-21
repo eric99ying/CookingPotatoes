@@ -12,5 +12,17 @@
     <div id='recipe-show-description'>
         <p><%= @recipe.description %></p>
     </div>
+    <div id='recipe-show-ingredients'>
+        <ul class='list-group'>
+            <% @recipe.get_ingredients.each do |recipe_ingredient| %>
+                <li class='list-group-item'><%= recipe_ingredient.quantity_and_name %></li>
+            <% end %>
+        </ul>
+    </div>
+    <div id='recipe-show-instructions'>
+        <% @recipe.get_instructions.each do |recipe_instruction| %>
+            <p><%= recipe_instruction.step %>) <%= recipe_instruction.instruction %></p>
+        <% end %>
+    </div>
 
 </div>

@@ -18,6 +18,11 @@
         <li class='nav-item p-1'>
             <a class='nav-link' href='/recipes'>View Recipes</a>
         </li>
+        <% if user_signed_in? %>
+            <li class='nav-item p-1'>
+                <a class='nav-link' href='<%= new_recipe_path %>'>Add Recipe</a>
+            </li>
+        <% end %>
         <li class='nav-item p-1'>
             <a class='nav-link' href=''>Help</a>
         </li>

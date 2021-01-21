@@ -15,4 +15,12 @@ class Recipe < ApplicationRecord
         return Recipe.all
     end
 
+    # Class method to get all ingredients and instructions in an array sorted properly
+    def get_ingredients
+        return self.recipe_ingredients.sort_by { |ri| ri.priority }
+    end
+    def get_instructions
+        return self.recipe_instructions.sort_by { |ri| ri.step }
+    end
+
 end
