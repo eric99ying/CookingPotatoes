@@ -1,0 +1,34 @@
+<!-- Vertical navbar -->
+<%= render "shared/sidebar" %>
+
+<!-- Page contents -->
+<div class='container' id='content'>
+    
+<div id='recipe-new-box'>
+
+<!-- Create new recipe form -->
+<%= form_with model: @recipe do |f| %>
+    <%= f.label(:name, 'Recipe name') %><br>
+    <%= f.text_field(:name) %><br>
+    <%= f.label(:description, 'Brief description') %><br>
+    <%= f.text_area(:description, size:"60x10") %><br>
+
+    <!-- Add instructions and ingredients -->
+    <%= f.fields_for :recipe_instructions, @recipe.recipe_instructions do |nf| %>
+    <div id="fieldsetContainer">
+        <fieldset id="1">
+            <%= nf.label(:instruction, 'Step 1') %><br>
+            <%= nf.text_area(:instruction, size:"60x5") %><br>
+        </fieldset>
+    </div>
+    <% end %>
+
+    <%= f.submit("Submit Recipe!") %><br>
+<% end %>
+
+<button id='addInstructionBtn'>Add another instruction</button> 
+
+</div>
+
+
+</div>

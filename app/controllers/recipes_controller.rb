@@ -1,4 +1,8 @@
 class RecipesController < ApplicationController
+
+    # Require user to be signed in for some actions
+    before_action :authenticate_user!, only: [:new, :create]
+
     def index
         @recipes = Recipe.all_recipes
     end
@@ -11,5 +15,14 @@ class RecipesController < ApplicationController
             @recipe = nil
             raise ActionController::RoutingError.new('Not Found')
         end
+    end
+
+    def new
+        @recipe = Recipe.new
+        @recipe.recipe_instructions.build
+    end
+
+    def create
+
     end
 end
