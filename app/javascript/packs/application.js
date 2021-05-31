@@ -23,7 +23,7 @@ window.addFormField = addFormField
 
 // Add handler for adding new fields in the form
 document.addEventListener("turbolinks:load", ()=> {
-    if (document.querySelector("#fieldsetContainer")) {
+    if (document.querySelector("#fieldsetContainerC")) {
         addFormField()
     }
 })

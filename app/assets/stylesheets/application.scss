@@ -68,11 +68,13 @@ html {
     width: calc(100vw - var(--sidebar_width));
 }
 
+/* ---------------- */
 /* Home page */
 #introduction {
 }
 
 
+/* ---------------- */
 /* Recipe list page */
 #recipe-header {
     position: relative;
@@ -141,6 +143,8 @@ html {
     position: absolute;
 }
 
+
+/* ---------------- */
 /* Recipe show page */
 #recipe-show-name {
 
@@ -159,8 +163,26 @@ html {
     width: 30vw;
 }
 
-
 #recipe-show-instructions {
     margin-top: 4rem;
 }
+
+
+/* ---------------- */
+/* New recipe page */
+#recipe-new-box {
+    
+};
+
+#recipe-new-add-ingredient, #recipe-new-add-instruction {
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+}
+
+fieldset {
+    display: inline;
+}
+
+
+
 

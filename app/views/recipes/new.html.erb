@@ -13,22 +13,36 @@
     <%= f.label(:description, 'Brief description') %><br>
     <%= f.text_area(:description, size:"60x10") %><br>
 
-    <!-- Add instructions and ingredients -->
-    <%= f.fields_for :recipe_instructions, @recipe.recipe_instructions do |nf| %>
-    <div id="fieldsetContainer">
-        <fieldset id="1">
-            <%= nf.label(:instruction, 'Step 1') %><br>
-            <%= nf.text_area(:instruction, size:"60x5") %><br>
-        </fieldset>
+    <!-- Add ingredients -->
+    <div id="recipe-new-add-ingredient">
+        Ingredients:<br>
+        <%= f.fields_for :recipe_ingredients, @recipe.recipe_ingredients do |nf| %>
+        <div id="fieldsetContainerB">
+            <fieldset id="b1">
+                <%= nf.text_area(:quantity_and_name, size:"20x2") %>
+            </fieldset>
+        </div>
+        <% end %>
+        <br>
+        <button id='addIngredientBtn' type='button'>Add another ingredient</button> 
     </div>
-    <% end %>
+
+    <!-- Instructions -->
+    <div id="recipe-new-add-instruction">
+        <%= f.fields_for :recipe_instructions, @recipe.recipe_instructions do |nf| %>
+        <div id="fieldsetContainerC">
+            <fieldset id="c1">
+                <%= nf.label(:instruction, 'Step 1') %><br>
+                <%= nf.text_area(:instruction, size:"60x4") %><br>
+            </fieldset>
+        </div>
+        <% end %>
+        <button id='addInstructionBtn' type='button'>Add another instruction</button><br><br>
+    </div>
 
     <%= f.submit("Submit Recipe!") %><br>
 <% end %>
 
-<button id='addInstructionBtn'>Add another instruction</button> 
-
 </div>
-
 
 </div>

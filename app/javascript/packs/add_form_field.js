@@ -1,26 +1,39 @@
-// We keep track of the number of instructions present to allow for steps to be numbered
-var numInstructionFields = 1;
-
+// JS function that attaches listeners to the add instruction and add ingredient buttons
 const addFormField = () => {
-    const createButton = document.getElementById("addInstructionBtn");
+    // Add instruction
+    const createInstructionButton = document.getElementById("addInstructionBtn");
 
-    createButton.addEventListener("click", () => {
+    createInstructionButton.addEventListener("click", () => {
 
-        const lastId = document.querySelector('#fieldsetContainer').lastElementChild.id;
+        const lastId = document.querySelector('#fieldsetContainerC').lastElementChild.id.substring(1);
 
         const newId = parseInt(lastId, 10) + 1;
 
-        const newFieldset = document.getElementById('1').outerHTML.replaceAll(/1/g,newId);
+        const newFieldset = document.getElementById('c1').outerHTML.replaceAll(/1/g,newId);
 
-        document.querySelector("#fieldsetContainer").insertAdjacentHTML(
+        document.querySelector("#fieldsetContainerC").insertAdjacentHTML(
+            "beforeend", newFieldset
+        );    
+
+    });
+
+    // Add ingredient
+    const createIngredientButton = document.getElementById("addIngredientBtn");
+
+    createIngredientButton.addEventListener("click", () => {
+
+        const lastId = document.querySelector('#fieldsetContainerB').lastElementChild.id.substring(1);
+
+        const newId = parseInt(lastId, 10) + 1;
+
+        const newFieldset = document.getElementById('b1').outerHTML.replaceAll(/1/g,newId);
+
+        document.querySelector("#fieldsetContainerB").insertAdjacentHTML(
             "beforeend", newFieldset
         );    
 
     });
 }
 
-const getNumInstructionFields = () => {
-    return numInstructionFields
-}
 
 export { addFormField }
