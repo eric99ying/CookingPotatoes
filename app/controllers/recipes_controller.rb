@@ -21,6 +21,7 @@ class RecipesController < ApplicationController
         @recipe = Recipe.new
         @recipe.recipe_instructions.build
         @recipe.recipe_ingredients.build
+        @recipe.recipe_tags.build
     end
 
     def create

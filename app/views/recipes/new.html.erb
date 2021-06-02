@@ -13,6 +13,12 @@
     <%= f.label(:description, 'Brief description') %><br>
     <%= f.text_area(:description, size:"60x10") %><br>
 
+    <!-- Recipe tags -->
+    <div id="recipe-new-add-tag">
+        Tags:<br>
+        <%= f.collection_check_boxes :recipe_tag_ids, RecipeTag.order(:name), :id, :name %>
+    </div>
+
     <!-- Add ingredients -->
     <div id="recipe-new-add-ingredient">
         Ingredients:<br>

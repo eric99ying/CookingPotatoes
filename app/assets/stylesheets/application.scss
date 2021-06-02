@@ -174,9 +174,14 @@ html {
     
 };
 
-#recipe-new-add-ingredient, #recipe-new-add-instruction {
+#recipe-new-add-ingredient, #recipe-new-add-instruction, #recipe-new-add-tag {
     padding-bottom: 1vh;
     padding-top: 1vh;
+}
+
+#recipe-new-add-tag label {
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
 }
 
 fieldset {
