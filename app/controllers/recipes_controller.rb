@@ -1,3 +1,5 @@
+require 'pp'
+
 class RecipesController < ApplicationController
 
     # Require user to be signed in for some actions
@@ -25,6 +27,8 @@ class RecipesController < ApplicationController
     end
 
     def create
+        pp params
+        
 
     end
 end

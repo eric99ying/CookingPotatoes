@@ -10,8 +10,12 @@
 <%= form_with model: @recipe do |f| %>
     <%= f.label(:name, 'Recipe name') %><br>
     <%= f.text_field(:name) %><br>
-    <%= f.label(:description, 'Brief description') %><br>
-    <%= f.text_area(:description, size:"60x10") %><br>
+
+    <!-- Recipe description -->
+    <div id="recipe-new-add-description">
+        <%= f.label(:description, 'Brief description') %><br>
+        <%= f.text_area(:description, size:"60x10") %><br>
+    </div>
 
     <!-- Recipe tags -->
     <div id="recipe-new-add-tag">
@@ -25,7 +29,7 @@
         <%= f.fields_for :recipe_ingredients, @recipe.recipe_ingredients do |nf| %>
         <div id="fieldsetContainerB">
             <fieldset id="b1">
-                <%= nf.text_area(:quantity_and_name, size:"20x2") %>
+                <%= nf.text_area(:quantity_and_name, size:"22x2") %> <!-- Make sure no 0 or 1 in text if not replaced -->
             </fieldset>
         </div>
         <% end %>
@@ -39,7 +43,7 @@
         <div id="fieldsetContainerC">
             <fieldset id="c1">
                 <%= nf.label(:instruction, 'Step 1') %><br>
-                <%= nf.text_area(:instruction, size:"60x4") %><br>
+                <%= nf.text_area(:instruction, size:"62x4") %><br>  <!-- Make sure no 0 or 1 in text if not replaced -->
             </fieldset>
         </div>
         <% end %>

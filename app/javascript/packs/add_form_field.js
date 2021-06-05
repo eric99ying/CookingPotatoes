@@ -9,7 +9,7 @@ const addFormField = () => {
 
         const newId = parseInt(lastId, 10) + 1;
 
-        const newFieldset = document.getElementById('c1').outerHTML.replaceAll(/1/g,newId);
+        const newFieldset = document.getElementById('c1').outerHTML.replaceAll(/1/g,newId).replaceAll(/0/g, newId-1);
 
         document.querySelector("#fieldsetContainerC").insertAdjacentHTML(
             "beforeend", newFieldset
@@ -26,7 +26,7 @@ const addFormField = () => {
 
         const newId = parseInt(lastId, 10) + 1;
 
-        const newFieldset = document.getElementById('b1').outerHTML.replaceAll(/1/g,newId);
+        const newFieldset = document.getElementById('b1').outerHTML.replaceAll(/1/g,newId).replaceAll(/0/g, newId-1);
 
         document.querySelector("#fieldsetContainerB").insertAdjacentHTML(
             "beforeend", newFieldset
