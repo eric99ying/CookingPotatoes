@@ -3,11 +3,19 @@
 
 <!-- Page contents -->
 <div class='container' id='content'>
+
+    <%= render "shared/creation_notice" %>
+
     <div id='recipe-show-name'>
-        <h1><%= @recipe.name %></h1>
+        <h1><%= @recipe.recipe_name %></h1>
     </div>
     <div id='recipe-show-creator'>
         <h3 class='text-muted'><%= @recipe.creator_name %></h1>
+    </div>
+    <div id='recipe-show-tags'>
+        <% @recipe.get_tags.each do |recipe_tag| %>
+            <span class='recipe-show-tags-element border border-primary rounded-pill'><%= recipe_tag.tag_name %></span>
+        <% end %>
     </div>
     <div id='recipe-show-description'>
         <p><%= @recipe.description %></p>
@@ -21,7 +29,7 @@
     </div>
     <div id='recipe-show-instructions'>
         <% @recipe.get_instructions.each do |recipe_instruction| %>
-            <p><%= recipe_instruction.step %>) <%= recipe_instruction.instruction %></p>
+            <p><%= recipe_instruction.step.to_i + 1 %>) <%= recipe_instruction.instruction %></p>
         <% end %>
     </div>
 

@@ -154,8 +154,21 @@ html {
     margin-top: 1rem;
 }
 
+#recipe-show-tags {
+    margin-top: 1rem;
+}
+
+.recipe-show-tags-element {
+    margin-right: 1rem;
+    padding: 0.2rem;
+    color: White;
+    width: 1.5rem;
+    background-color: RoyalBlue;
+}
+
 #recipe-show-description {
     margin-top: 2rem;
+
 }
 
 #recipe-show-ingredients {
@@ -184,10 +197,14 @@ html {
     margin-right: 0.5vw;
 }
 
-fieldset {
+fieldset[id^="b"]{
     display: inline;
 }
 
+/* --------------------- */
+.recipe-creation-notice {
+    
+}
 
 
 

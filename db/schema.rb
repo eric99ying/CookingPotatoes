@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_01_14_053534) do
   end
 
   create_table "recipe_tags", force: :cascade do |t|
-    t.string "name", default: "", null: false
+    t.string "tag_name", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2021_01_14_053534) do
   end
 
   create_table "recipes", force: :cascade do |t|
-    t.string "name", default: "", null: false
+    t.string "recipe_name", default: "", null: false
     t.string "creator_name", default: "", null: false
     t.string "creator_email", default: "", null: false
     t.string "description", default: "", null: false

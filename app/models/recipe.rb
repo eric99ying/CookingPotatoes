@@ -7,12 +7,13 @@ class Recipe < ApplicationRecord
     has_and_belongs_to_many :recipe_tags
 
     # Ensure name of recipe is appropriate
-    validates_length_of :name, minimum: 1, maximum: 40, 
+    validates_length_of :recipe_name, minimum: 1, maximum: 40, 
         too_long: "Name must be below 40 characters", too_short: "Name cannot be blank"
     validates_length_of :recipe_instructions, minimum: 1, maximum: 20,
         too_long: "Number of steps cannot exceed 20", too_short: "Must have at least one step"
     validates_length_of :recipe_ingredients, minimum: 1, maximum: 30,
         too_long: "Number of ingredients cannot exceed 30", too_short: "Must have at least one ingredient"
+    validates_length_of :creator_name, minimum: 1, too_short: "Creator name cannot be empty"
 
     # Ensure instructions and ingredients can be passed as arrays
     accepts_nested_attributes_for :recipe_instructions
@@ -23,12 +24,15 @@ class Recipe < ApplicationRecord
         return Recipe.all
     end
 
-    # Class method to get all ingredients and instructions in an array sorted properly
+    # Class method to get all ingredients, instructions, and tags in an array sorted properly
     def get_ingredients
         return self.recipe_ingredients.sort_by { |ri| ri.priority }
     end
     def get_instructions
         return self.recipe_instructions.sort_by { |ri| ri.step }
+    end
+    def get_tags
+        return self.recipe_tags.sort_by { |ri| ri.tag_name }
     end
 
 end
